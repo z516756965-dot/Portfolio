@@ -1,0 +1,59 @@
+/* ================= 1. 皮肤与品牌主题配置 (variables.css) ================= */
+
+/* 引入自定义外部字体 */
+@font-face {
+    font-family: 'AlibabaPuHuiTi';
+    src: url('./AlibabaPuHuiTi-3-55-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AlibabaPuHuiTi';
+    src: url('./AlibabaPuHuiTi-3-85-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AlibabaPuHuiTi';
+    src: url('./AlibabaPuHuiTi-3-105-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* 全局皮肤视觉色彩与视觉基准记号标记 */
+:root {
+    --primary-blue: #2f58cd;     /* 品牌主视觉色调 */
+    --accent-gold: #c5a059;      /* 核心辅助色调 */
+    
+    --primary-light: #eaf0fb;    /* 主高亮色调淡色底纹 */
+    --primary-hover: #2446a8;    /* 交互悬停态深蓝色 */
+    
+    --bg-white: #ffffff;
+    --bg-light: #F4F7FA; 
+    --text-dark: #0F172A; 
+    --text-gray: #475569;
+    --border-color: #E2E8F0;
+    --nav-height: 80px;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    --font-body: 'AlibabaPuHuiTi', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    --font-number: 'Poppins', 'AlibabaPuHuiTi', sans-serif;
+}

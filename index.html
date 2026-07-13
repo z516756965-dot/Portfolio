@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张广德 | AIGC设计师 & 项目管理者 | Editorial Intelligence</title>
+    <!-- 第三方资源依赖库引入 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- 本地解耦工程化样式配置文件链接 -->
+    <link rel="stylesheet" href="./variables.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- 顶部固定悬浮导航栏 -->
+    <nav class="top-nav">
+        <a href="#hero-section" class="nav-logo">Personal Website</a>
+        <ul class="nav-links">
+            <li><a href="#hero-section" class="nav-link active">首页</a></li>
+            <li><a href="#resume-section" class="nav-link">个人简介</a></li>
+            <li><a href="#aigc-projects-section" class="nav-link">AIGC作品</a></li>
+            <li><a href="#ai-management-section" class="nav-link">项目统筹</a></li>
+            <li><a href="#visual-design-section" class="nav-link">视觉设计</a></li>
+        </ul>
+        <a href="javascript:void(0);" class="nav-link contact-btn nav-contact" onclick="openContactPopup()">联系我</a>
+    </nav>
+
+    <!-- 右上角精致多触点业务卡片联系弹窗 -->
+    <div id="contactPopupOverlay" class="contact-popup-overlay" onclick="closeContactPopup()"></div>
+    <div id="contactPopup" class="contact-popup">
+        <div class="contact-popup-header">
+            <div class="contact-popup-title">Let's Connect</div>
+            <button class="contact-popup-close" onclick="closeContactPopup()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="popup-contact-item" onclick="copyText('18804316764', this)">
+            <i class="fas fa-phone-alt"></i> <span>18804316764</span>
+        </div>
+        <div class="popup-contact-item" onclick="copyText('z516756965', this)">
+            <i class="fab fa-weixin"></i> <span>z516756965</span>
+        </div>
+        <div class="popup-contact-item" onclick="copyText('516756965@qq.com', this)">
+            <i class="fas fa-envelope"></i> <span>516756965@qq.com</span>
+        </div>
+    </div>
+
+    <!-- 首页主KV大图形象区 -->
+    <header id="hero-section" class="hero-fullscreen section-block">
+        <div class="hero-container">
+            <div class="portrait-container">
+                <img src="your-portrait.png" alt="张广德肖像" onerror="this.style.display='none'; this.parentNode.innerHTML='预留照片位置 (自动隐藏)'">
+            </div>
+            <div class="hero-text-block">
+                <span class="tagline">AIGC方向探索与落地应用</span>
+                <h1>您好！我是张广德<br>一名<span>AIGC</span>设计师</h1>
+                <p class="main-desc">不断探索AI设计的边界，致力于将前沿生成式AI技术转化为实际生产力，并为商业赋能，实现从工具使用者向工作流架构师的跃迁</p>
+                
+                <div class="hero-contact-btns">
+                    <div class="hero-contact-btn" onclick="copyText('18804316764', this)">
+                        <i class="fas fa-phone-alt"></i> <span>18804316764</span>
+                    </div>
+                    <div class="hero-contact-btn btn-wechat" onclick="copyText('z516756965', this)">
+                        <i class="fab fa-weixin"></i> <span>z516756965</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 核心主体数据容器 -->
+    <div class="container">
+        
+        <!-- 国际化个人简介模块 -->
+        <div id="resume-section" class="section-block">
+            <h2 class="section-title">个人简介</h2>
+	            <div class="content-card profile-card">
+	                 <div class="profile-international-layout">
+                         <div class="profile-hero-row">
+                             <div class="profile-hero-main">
+                                 <h3>张广德</h3>
+                                 <div class="profile-hero-personal">
+                                     <div><span>出生日期</span><strong>1995.02.19</strong></div>
+                                     <div><span>家乡/现居地</span><strong>黑龙江 / 大望路</strong></div>
+                                     <div><span>毕业院校</span><strong>吉林艺术学院/数字媒体艺术 (2019年毕业)</strong></div>
+                                     <div><span>星座</span><strong>双鱼座</strong></div>
+                                 </div>
+	                             </div>
+                         </div>
+
+	                     <div class="profile-two-col-layout">
+	                         <div class="profile-column">
+		                             <div class="profile-info-panel profile-basic-panel">
+		                                 <h3 class="profile-col-title">关于我</h3>
+		                                 <div class="profile-copy">
+		                                     <p>3年+AIGC实战落地。推进团队中AIGC规模化应用。从早期生图+重绘模式到过程中训练模型、工作流搭建、智能体搭建到现在vibe coding和建设AI平台，持续探索跟进与AI协作模式。</p>
+		                                 </div>
+                                         <div class="profile-copy">
+		                                     <p>6年+视觉设计经验，聚焦在线教育国内和海外市场，在保证设计品质和创意下，从业务角度理解设计价值为业务赋能，通过数据验证和复盘。</p>
+		                                 </div>
+	                             </div>
+
+	                             <div class="profile-keyword-block">
+	                                 <h3 class="profile-col-title">核心技能</h3>
+	                                 <div class="tech-tags-new profile-tag-cloud">
+	                                     <span class="tag-new">捕捉AIGC前沿技术</span>
+	                                     <span class="tag-new">部署AIGC工作流</span>
+                                     <span class="tag-new">工具开发</span>
+                                     <span class="tag-new">搭建AI平台</span>
+                                     <span class="tag-new">视觉设计（海外/国内）</span>
+                                     <span class="tag-new">项目统筹与管理</span>
+                                     <span class="tag-new">深度理解业务</span>
+	                                     <span class="tag-new">数据分析与复盘</span>
+	                                 </div>
+	                             </div>
+		                         </div>
+
+                         <div class="profile-column">
+                             <div class="profile-experience-panel">
+                                 <h3 class="profile-col-title">工作经历</h3>
+                                 <div class="experience-compact-list">
+	                                     <div class="experience-compact-item is-current">
+	                                         <div class="exp-meta">
+	                                             <strong>火花思维</strong>
+	                                             <div class="exp-role-line">
+	                                                 <span class="exp-role">AIGC设计师 / AIGC项目负责人</span>
+	                                                 <span class="exp-date">2022.01 - 至今</span>
+	                                             </div>
+	                                         </div>
+                                         <div class="exp-content">
+                                             <ul class="exp-achievement-list">
+                                                 <li>
+                                                     <span class="exp-index">01</span>
+                                                     <div><strong>推进团队AIGC规模化应用：</strong>日常项目中AI应用渗透率达 <em>77%</em>，涉及项目类型 <em>20+</em>，累计部署工作流 <em>50+</em> 条，综合提效高达 <em>80%</em>。</div>
+                                                 </li>
+                                                 <li>
+                                                     <span class="exp-index">02</span>
+                                                     <div><strong>AI视频项目统筹：</strong>带领团队在4个月内产出完成 <em>1200+</em> 支AI短剧视频，统筹生产流程中工作模式、AI工具、审核机制。负责人员管理、跟进制作进度和项目按期交付。</div>
+                                                 </li>
+                                                 <li>
+                                                     <span class="exp-index">03</span>
+                                                     <div><strong>视觉设计：</strong>负责海外&国内在线教育视觉设计，基于数据驱动，精准把控不同文化背景下的品牌视觉调性与落地品质。</div>
+                                                 </li>
+                                             </ul>
+                                         </div>
+                                     </div>
+	                                     <div class="experience-compact-item is-support">
+	                                         <div class="exp-meta">
+	                                             <strong>高途-小早</strong>
+	                                             <div class="exp-role-line">
+	                                                 <span class="exp-role">高级设计师</span>
+	                                                 <span class="exp-date">2020.11 - 2021.09</span>
+	                                             </div>
+	                                         </div>
+                                         <div class="exp-content">
+                                             <p>负责幼儿教育行业日常运营活动与营销视觉（偏插画类），从需求梳理、风格探索到最终落地，支撑业务活动高效交付。</p>
+                                         </div>
+                                     </div>
+	                                     <div class="experience-compact-item is-support">
+	                                         <div class="exp-meta">
+	                                             <strong>考虫网</strong>
+	                                             <div class="exp-role-line">
+	                                                 <span class="exp-role">运营设计师</span>
+	                                                 <span class="exp-date">2019.3 - 2020.10</span>
+	                                             </div>
+	                                         </div>
+                                         <div class="exp-content">
+                                             <p>负责4/6级和考研的相关运营设计，积累美学功底、信息排版与设计逻辑的经验。</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+	                         </div>
+                     </div>
+
+                     <!-- 底部核心能力模型卡片 -->
+                     <div class="core-modules-new">
+                         <h3 class="profile-col-title">核心能力与业务</h3>
+                         <div class="core-grid">
+                             <div class="core-card">
+                                 <span class="card-number">01</span>
+	                                 <h4>AI规模化应用</h4>
+	                                 <p class="desc">将高频设计需求拆解为可复用流程，沉淀工作流、Agent与生产模板，推动团队AI能力规模化落地。</p>
+                                 <a href="#aigc-projects-section" class="card-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                             </div>
+                             <div class="core-card">
+                                 <span class="card-number">02</span>
+	                                 <h4>AI项目统筹交付</h4>
+	                                 <p class="desc">统筹内容、视觉、工具、审核等关键节点，搭建稳定产线，保障高并发项目的效率与品质。</p>
+                                 <a href="#ai-management-section" class="card-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                             </div>
+                             <div class="core-card">
+                                 <span class="card-number">03</span>
+	                                 <h4>AI视觉设计</h4>
+	                                 <p class="desc">结合生成式AI与视觉设计判断，完成品牌、活动、投放、海外市场等多场景商业视觉落地。</p>
+                                 <a href="#visual-design-section" class="card-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+            </div>
+        </div>
+
+        <!-- AIGC 迭代演进阶段作品集模块 -->
+        <div id="aigc-projects-section" class="section-block content-card">
+            <h2 class="section-title">AIGC 作品集</h2>
+            
+            <!-- 楼层二级滚动吸顶联动标签 -->
+            <nav class="sub-nav" id="aigc-sub-nav">
+                <a href="#aigc-v4" class="active">V4.0</a>
+                <a href="#aigc-v3">V3.0</a>
+                <a href="#aigc-v2">V2.0</a>
+                <a href="#aigc-v1">V1.0</a>
+            </nav>
+
+            <p class="aigc-intro">自 2023 年初深耕 AIGC 领域，完整见证并参与了 AI 技术爆发与迭代。在技术演进的每一个关键节点，均实现了设计边界的拓宽与业务价值的落地。</p>
+            
+            <!-- 大版块演进看板数据网格 -->
+            <div class="aigc-overview-grid">
+                <div class="overview-item">
+                    <div class="overview-version">v4.0</div>
+                    <div class="overview-title">重构职能边界</div>
+                </div>
+                <div class="overview-item">
+                    <div class="overview-version">v3.0</div>
+                    <div class="overview-title">Agent标准化生产</div>
+                </div>
+                <div class="overview-item">
+                    <div class="overview-version">v2.0</div>
+                    <div class="overview-title">定制化设计</div>
+                </div>
+                <div class="overview-item">
+                    <div class="overview-version">v1.0</div>
+                    <div class="overview-title">AI辅助生图</div>
+                </div>
+            </div>
+            
+            <!-- V4楼层：突破代码交付与产品全流程 -->
+            <div id="aigc-v4" class="stage-detail-block">
+                <div class="stage-header">
+                    <h3><span>v4.0</span> 重构设计师职能边界</h3>
+                    <p>利用AI对话式驱动代码生成与产品全流程设计，突破传统视觉设计师的执行边界，向产品架构与全链路项目交付延伸。实现从推导到最终落地的高效闭环。</p>
+                    <div class="tech-stack-line">
+                        <span>vebe coding</span> <span>Gemini</span> <span>Chatgpt</span>
+                    </div>
+                </div>
+                
+                <div class="two-col-projects">
+                    <div class="project-card-col">
+                        <h4>潮玩IP全流程制作</h4>
+                        <p>利用AI搭建潮玩生产网站，根据艺术潮流方向、米兰时装周、奢侈品，推出潮玩IP主题和款式，从0到1全流程制作，最终输出3D风格8视图，实现设计推导到落地。</p>
+                        <a href="https://z516756965-dot.github.io/pomi/" target="_blank" class="stage-action-btn" style="align-self: flex-start; margin-top: 0;">查看演示效果 <i class="fas fa-arrow-right"></i></a>
+                        <div class="image-row"><img src="AIGC4.0-1.png" alt="网站构建展示" onerror="this.style.position='static'; this.style.display='none'; this.parentNode.innerHTML='预留 AIGC 4.0 项目1 截图'"></div>
+                    </div>
+                    
+                    <div class="project-card-col">
+                        <h4>英语单词游戏</h4>
+                        <p>一款面向儿童及语言学习者的交互式网页游戏。它将单词学习与“拖拽配对”玩法相结合，通过生动的视觉场景与即时反馈，让用户在趣味探索中掌握英文词汇。</p>
+                        <a href="https://z516756965-dot.github.io/wordpuzzle.github.io/" target="_blank" class="stage-action-btn" style="align-self: flex-start; margin-top: 0;">查看演示效果 <i class="fas fa-arrow-right"></i></a>
+                        <div class="image-row"><img src="AIGC4.0-2.png" alt="系统面板展示" onerror="this.style.position='static'; this.style.display='none'; this.parentNode.innerHTML='预留 AIGC 4.0 项目2 截图'"></div>
+                    </div>
+
+                    <div class="project-card-col">
+                        <h4>古诗三百首互动游戏</h4>
+                        <p>由gemini 3生成，集填词、排序、解析、问答的趣味挑战。用游戏方式巩固古诗知识，让古诗学习变得轻松好玩！</p>
+                        <a href="https://z516756965-dot.github.io/gushi/" target="_blank" class="stage-action-btn" style="align-self: flex-start; margin-top: 0;">查看样式效果 <i class="fas fa-arrow-right"></i></a>
+                        <div class="image-row"><img src="AIGC4.0-3.png" alt="海报生成系统展示" onerror="this.style.position='static'; this.style.display='none'; this.parentNode.innerHTML='预留 AIGC 4.0 项目3 截图'"></div>
+                    </div>
+
+                    <div class="project-card-col">
+                        <h4>AI局部修改工具 </h4>
+                        <p>本工具面向视觉物料修改场景，提供可自定义选区、文字识别、对话式修改功能，降低非设计人员处理轻量修改的门槛和协同性。</p>
+                        <a href="https://z516756965-dot.github.io/xiugai/" target="_blank" class="stage-action-btn" style="align-self: flex-start; margin-top: 0;">查看构建平台 <i class="fas fa-arrow-right"></i></a>
+                        <div class="image-row"><img src="AIGC4.0-4.png" alt="教育物料平台展示" onerror="this.style.position='static'; this.style.display='none'; this.parentNode.innerHTML='预留 AIGC 4.0 项目4 截图'"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- V3楼层：智能体与全链路提效面板 -->
+            <div id="aigc-v3" class="stage-detail-block">
+                <div class="stage-header" style="margin-bottom: 2rem;">
+                    <h3><span>v3.0</span> Agent 标准化生产</h3>
+                    <p style="margin-bottom: 0;">搭建高度定制化的节点工作流。通过自动化机制，将 AI 能力平台化、工具化，解决长链路业务需求，实现复杂数据与视觉任务的高效自动批处理。</p>
+                    
+                    <!-- Bento 大盘核心提效业务网格 -->
+                    <div class="v3-bento-grid">
+                        <div class="bento-item bento-main">
+                            <div class="bento-val">80<span>%</span></div>
+                            <div class="bento-label">综合效能跃升</div>
+                            <div class="bento-desc">相较于常规AI辅助人工制作，整体工作流实现了质的飞跃，彻底重塑高并发视觉资产的生产模式。</div>
+                        </div>
+                        <div class="bento-item bento-brand">
+                            <div class="bento-val">77<span>%</span></div>
+                            <div class="bento-label">2026年业务渗透率</div>
+                        </div>
+                        <div class="bento-item bento-light">
+                            <div class="bento-val">2456<span>+</span></div>
+                            <div class="bento-label">2026年累计应用量</div>
+                        </div>
+                        <div class="bento-item bento-light">
+                            <div class="bento-val">72<span>项</span></div>
+                            <div class="bento-label">累计部署工作流</div>
+                        </div>
+                        <div class="bento-item bento-light">
+                            <div class="bento-val">982<span>h</span></div>
+                            <div class="bento-label">2026年累计节省工时</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智能体平台与跑马灯展示 -->
+                <div class="coze-platform-section">
+                    <div class="coze-platform-head">
+                        <div>
+                            <span class="section-kicker">Workflow Hub</span>
+                            <h4>扣子工作流聚合平台</h4>
+                            <p>汇总各业务需求 Agent 生产、素材生产、AI 工具集合，打造团队级 AI 赋能中枢。</p>
+                        </div>
+                        <a href="https://www.coze.cn/enterprise/volcano_2100166699/store/project/7659726236729786408?from=project_card&bid=6kjddgff49g16" target="_blank" class="stage-action-btn coze-head-action">进入平台演示 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="coze-carousel-container">
+                        <div class="coze-nav-btn coze-prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="coze-nav-btn coze-next"><i class="fas fa-chevron-right"></i></div>
+                        
+                        <div class="swiper coze-carousel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide coze-slide">
+                                    <div class="slide-layout">
+                                        <div class="slide-image-box"><img src="AIGC3.0-G1-1.png" alt="海报演示" onerror="this.src='https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1200&auto=format&fit=crop'"></div>
+                                        <div class="slide-text-box">
+                                            <h4>一键生成海报(Agent)</h4>
+                                            <p>结合大模型预设和工作流部署，输入标题、场景等内容并并选择字体、风格、样式完成自定义一键输出海报。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide coze-slide">
+                                    <div class="slide-layout">
+                                        <div class="slide-image-box"><img src="AIGC3.0-G1-2.png" alt="批量演示" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop'"></div>
+                                        <div class="slide-text-box">
+                                            <h4>自动化批量生产</h4>
+                                            <p>针对高频重复场景搭建的工作流。直接读取表格批量数据，实现批量化生产。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide coze-slide">
+                                    <div class="slide-layout">
+                                        <div class="slide-image-box"><img src="AIGC3.0-G1-3.png" alt="设计演示" onerror="this.src='https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=1200&auto=format&fit=crop'"></div>
+                                        <div class="slide-text-box">
+                                            <h4>设计素材生产</h4>
+                                            <p>基于高度定制的 Prompt 框架，实现仅通过文字输出高品质插图、字体、标题、图片等元素，沉淀数字创意资产。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide coze-slide">
+                                    <div class="slide-layout">
+                                        <div class="slide-image-box"><img src="AIGC3.0-G1-4.png" alt="业务演示" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'"></div>
+                                        <div class="slide-text-box">
+                                            <h4>多业务智能体聚合</h4>
+                                            <p>搭建不同业务下多样需求的聚合页，便于使用</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination coze-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 业务前端工作流切页栏 -->
+                <div style="margin-top: 4rem;">
+                    <div style="margin-bottom: 3rem;">
+                        <h4 style="font-size: 1.8rem; margin-bottom: 0.8rem; border-left: 6px solid var(--text-dark); padding-left: 1.2rem; font-weight: 800;">前端开发工作流程生产</h4>
+                        <p style="color: var(--text-gray); font-size: 1.15rem; padding-left: 1.6rem;">通过 AI 驱动全链路前端开发，涵盖官网搭建、互动应用开发与游戏制作工作流。</p>
+                    </div>
+
+                    <div class="frontend-workflow-container">
+                        <div class="fw-tabs">
+                            <div class="fw-tab active" data-target="fw-1">商场产品详情页 <i class="fas fa-arrow-right"></i></div>
+                            <div class="fw-tab" data-target="fw-2">多资源位banner <i class="fas fa-arrow-right"></i></div>
+                            <div class="fw-tab" data-target="fw-3">Kol物料 <i class="fas fa-arrow-right"></i></div>
+                            <div class="fw-tab" data-target="fw-4">新签海报 <i class="fas fa-arrow-right"></i></div>
+                            <div class="fw-tab" data-target="fw-5">新闻详情页 <i class="fas fa-arrow-right"></i></div>
+                        </div>
+
+                        <div class="fw-content-wrapper">
+                            <div id="fw-1" class="fw-content active">
+                                <h4>商场产品详情页</h4>
+                                <p>结合表格批量填入商品图片、名称、价格等信息并加入头图，周期性完成商城页设计</p>
+                                <a href="https://z516756965-dot.github.io/shangcheng/" target="_blank" class="fw-action-btn">查看实际效果 </a>
+                                <div class="fw-image-box">
+                                    <img src="AIGC3.0-G2-1.png" alt="品牌官网极速构建" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style='color:var(--text-gray)'>预留图片：AIGC3.0-G2-1.png</span>'">
+                                </div>
+                            </div>
+                            
+                            <div id="fw-2" class="fw-content">
+                                <h4>多资源位banner制作(20张)</h4>
+                                <p>批量生成banner，对banner进行延展，包含横版、竖版、长条版、方形图等，并对部分banner抠图处理</p>
+                                <a href="https://z516756965-dot.github.io/xuexiji/" target="_blank" class="fw-action-btn">查看实际效果</a>
+                                <div class="fw-image-box">
+                                    <img src="AIGC3.0-G2-2.png" alt="互动学习应用流" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style='color:var(--text-gray)'>预留图片：AIGC3.0-G2-2.png</span>'">
+                                </div>
+                            </div>
+
+                            <div id="fw-3" class="fw-content">
+                                <h4>Kol物料</h4>
+                                <p>因该物料信息繁琐，支持一键上传所有文案，AI智能填写（类似淘宝地址信息输入）</p>
+                                <a href="https://z516756965-dot.github.io/kol/" target="_blank" class="fw-action-btn">查看实际效果 </a>
+                                <div class="fw-image-box">
+                                    <img src="AIGC3.0-G2-3.png" alt="潮玩 IP 视觉站" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style='color:var(--text-gray)'>预留图片：AIGC3.0-G2-3.png</span>'">
+                                </div>
+                            </div>
+
+                            <div id="fw-4" class="fw-content">
+                                <h4>新签海报</h4>
+                                <p>固定模板，仅上传头图和修改日期即可，有多种颜色模板可选</p>
+                                <a href="https://z516756965-dot.github.io/xinqian/" target="_blank" class="fw-action-btn">查看实际效果 </a>
+                                <div class="fw-image-box">
+                                    <img src="AIGC3.0-G2-4.png" alt="游戏场景代码生成" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style='color:var(--text-gray)'>预留图片：AIGC3.0-G2-4.png</span>'">
+                                </div>
+                            </div>
+                            <div id="fw-5" class="fw-content">
+                                <h4>新闻详情页</h4>
+                                <p>设计类定制化工具，支持中台部门同学自行制作新闻长图</p>
+                                <a href="https://z516756965-dot.github.io/news/" target="_blank" class="fw-action-btn">查看实际效果 </a>
+                                <div class="fw-image-box">
+                                    <img src="AIGC3.0-G2-5.png" alt="新闻详情页" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style='color:var(--text-gray)'>预留图片：AIGC3.0-G2-5.png</span>'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vebe Coding + Skill 定制化海报输出 -->
+                <div class="vebe-poster-section">
+                    <div style="margin-bottom: 2.5rem;">
+                        <h4 style="font-size: 1.8rem; margin-bottom: 0.8rem; border-left: 6px solid var(--text-dark); padding-left: 1.2rem; font-weight: 800;">vebe coding+skill 定制化海报制作</h4>
+                        <p style="color: var(--text-gray); font-size: 1.15rem; padding-left: 1.6rem;">基于品牌设计语言与需求类型结合，封装成skill，仅输入海报文案、触发词和颜色即可一键生成海报，制作成标准化的海报生产流程。</p>
+                    </div>
+
+                    <div class="vebe-carousel-container">
+                        <div class="coze-nav-btn vebe-prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="coze-nav-btn vebe-next"><i class="fas fa-chevron-right"></i></div>
+
+                        <div class="swiper vebe-carousel">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide vebe-slide">
+                                    <div class="slide-layout">
+                                        <div class="slide-image-box">
+                                            <img src="AIGC3.0-G3-1.png" alt="定制化海报输出案例一" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style='color:var(--text-gray)'>预留图片：AIGC3.0-G3-1.png</span>'">
+                                        </div>
+                                        <div class="slide-text-box" >
+                                            <h4 style="font-weight:700;"> 触发词：私域海报 + 海报文案输入 </h4>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide vebe-slide">
+                                    <div class="slide-layout">
+                                        <div class="slide-image-box">
+                                            <img src="AIGC3.0-G3-2.png" alt="定制化海报输出案例二" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style='color:var(--text-gray)'>预留图片：AIGC3.0-G3-2.png</span>'">
+                                        </div>
+                                        <div class="slide-text-box">
+                                            <h4 style="font-weight:700;">触发词：新签海报 + 海报文案输入</h4>
+                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination vebe-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- V2楼层：模型微调调优层级说明 -->
+            <div id="aigc-v2" class="stage-detail-block">
+                <div class="stage-header">
+                    <h3><span>v2.0</span> 定制化设计 (Lora训练)</h3>
+                    <p>深入模型微调与训练体系，实现特定 IP 设定与品牌风格化的精准控制。确保所有 AI 生成的视觉内容符合严格的商业级一致性要求。</p>
+                    <div class="tech-stack-line">
+                         <span>comfyUI</span> <span>Flux</span>  <span>Stable Diffusion 1.5</span> <span>模型训练</span>
+                    </div>
+                </div>
+
+                <div class="content-group-item">
+                    <h4 class="cg-title">文生图模型训练 1.0</h4>
+                    <p class="cg-desc">2023年11月3日：发布三小只模型（Lora）-文生图：全新定义IP生产模式</p>
+                    <div class="cg-image-wrapper">
+                        <img src="AIGC2.0-1.png" alt="专属品牌 IP 模型微调" onerror="this.style.display='none'; this.parentNode.innerHTML='<img src=\'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100%\' height=\'200\'><rect width=\'100%\' height=\'200\' fill=\'%23F4F7FA\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23475569\'>预留图片位：AIGC2.0-1.png</text></svg>\'>'">
+                    </div>
+                </div>
+                
+                <div class="content-group-item">
+                    <h4 class="cg-title">文生图模型训练 2.0</h4>
+                    <p class="cg-desc">为了提升设计品质的交付，我们定义了设计语言规范，根据IP标准升级了模型训练和comfyUI工作流（扁平风格转3D），IP生产时间由1.5天/只 缩减至 0.3天/只，效率提升400%，并且品质和统一性显著提升。</p>
+                    <div class="cg-image-wrapper">
+                        <img src="AIGC2.0-2.png" alt="专属品牌 IP 模型微调" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AIGC2.0-2.png</div>'">
+                    </div>
+                    
+                    <p class="cg-desc" style="margin-top: 3rem;">基于模型训练和comfyUI工作流（扁平风格转3D），插画同学完成三小只素材组件库的搭建</p>
+                    <div class="cg-image-wrapper">
+                        <img src="AIGC2.0-3.png" alt="专属品牌 IP 模型微调" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AIGC2.0-3.png</div>'">
+                    </div>
+                </div>
+                
+                <div class="content-group-item">
+                    <h4 class="cg-title">文生图模型训练 3.0</h4>
+                    <p class="cg-desc">随着AI的发展，黑森林团队推出Flux图像模型，具备更强的语义能力和稳定高质量输出的能力。</p>
+                    <div class="cg-image-wrapper">
+                        <img src="AIGC2.0-4.png" alt="专属品牌 IP 模型微调" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AIGC2.0-4.png</div>'">
+                    </div>
+                </div>
+                
+                <div class="content-group-item">
+                    <h4 class="cg-title">文生图模型训练 4.0</h4>
+                    <p class="cg-desc">使用Qwen大模型训练，语义能力和稳定性再次提升。例：ip节气海报与节日海报</p>
+                    <div class="cg-image-wrapper">
+                        <img src="AIGC2.0-5.png" alt="专属品牌 IP 模型微调" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AIGC2.0-5.png</div>'">
+                    </div>
+                    <p class="cg-desc"style="margin-top:2rem;">新年海报（部分）</p>
+                    <div class="cg-image-wrapper">
+                        <img src="AIGC2.0-6.png" alt="专属品牌 IP 模型微调" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AIGC2.0-5.png</div>'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- V1楼层：早期模型探索提示词工程 -->
+            <div id="aigc-v1" class="stage-detail-block" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                <div class="stage-header">
+                    <h3><span>v1.0</span> AI辅助生图</h3>
+                    <p>在AI生图初期，以Midjourney生图为主 ，AI生图能力较弱，主要以AI+后期绘制的方式制作插画海报类需求。</p>
+                    <div class="tech-stack-line">
+                        <span>Midjourney</span> 
+                    </div>
+                </div>
+
+                <div class="content-group-item">
+                    <h4 class="cg-title">早期AI生图应用</h4>
+                    <p class="cg-desc">探索与AI协作模式，采用AI生背景+人力手绘IP+后期调试细节方式。</p>
+                    <div class="cg-image-wrapper">
+                        <img src="AIGC1.0-1.png" alt="早期视觉风格探索" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AIGC1.0-1.png</div>'">
+                    </div>
+                    <p class="cg-desc"style="margin-top:2rem;">生图采用基础主体 + 场景内容 + 氛围词 + 风格限定 + 参数微调，系统性地构建团队风格咒语库</p>
+                    <div class="cg-image-wrapper">
+                        <img src="AIGC1.0-2.png" alt="早期视觉风格探索" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AIGC1.0-1.png</div>'">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- AI 项目全产线管理规范统筹模块 -->
+        <div id="ai-management-section" class="section-block content-card">
+    <h2 class="section-title">AI项目统筹与管理</h2>
+    
+    <nav class="sub-nav" id="aimgmt-sub-nav">
+        <a href="#aimgmt-drama" class="active">英文课本剧规模化生产</a>
+        <a href="#aimgmt-words">单词插图批量化生产</a>
+    </nav>
+
+    <div id="aimgmt-drama" class="stage-detail-block" style="border-bottom: 1px dashed rgba(226, 232, 240, 0.8); margin-bottom: 3rem; padding-bottom: 2rem;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 800;">英文课本剧规模化生产</h3>
+        <p class="cg-desc">统筹团队资源，从招聘到管理（6位实习生），整合AI短剧视频生产工作流和培训机制，确保项目高品质按时交付。</p>
+
+        <div class="video-carousel-container">
+            <div class="swiper video-carousel">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide video-slide">
+                        <video src="1.1.mp4" controls></video>
+                        <p>V1.0 英文剧本视频案例</p>
+                    </div>
+                    <div class="swiper-slide video-slide">
+                        <video src="1.2.mp4" controls></video>
+                        <p>V2.0 解决语音与嘴形同步功能</p>
+                    </div>
+                </div>
+                <div class="swiper-pagination video-pagination"></div>
+            </div>
+            <div class="coze-nav-btn video-prev" style="left: -28px;"><i class="fas fa-chevron-left"></i></div>
+            <div class="coze-nav-btn video-next" style="right: -28px;"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        
+       <div id="ai-mgmt-process" class="content-group-item">
+    <h4 class="cg-title">AI 项目整合应用：降低生产门槛</h4>
+    <p class="cg-desc">前期选取AI工具（AI语音、生图、生视频）、建立人物素材库、与产品和技术协调并简化上传流程。</p>
+
+    <div class="ai-process-static-grid">
+        <div class="ai-process-version-card">
+            <div class="ai-process-container">
+                <div class="process-node">
+                    <div class="tool-tag">火山引擎</div>
+                    <div class="node-box"><h4>音 频</h4><p>生产</p></div>
+                    <div class="node-details"><span>人物音色设定</span><span>基础配音流程</span></div>
+                </div>
+                <div class="process-connector"><i class="fas fa-arrow-right"></i></div>
+                <div class="process-node">
+                    <div class="tool-tag">Midjourney / 即梦</div>
+                    <div class="node-box"><h4>图 片</h4><p>生产</p></div>
+                    <div class="node-details"><span>人物一致性</span><span>风格一致性</span><span>教材匹配性</span></div>
+                </div>
+                <div class="process-connector"><i class="fas fa-arrow-right"></i></div>
+                <div class="process-node">
+                    <div class="tool-tag">HailuoAI / 即梦</div>
+                    <div class="node-box"><h4>视 频</h4><p>生产</p></div>
+                    <div class="node-details"><span>动画流畅</span><span>符合物理事实</span><span>减少明显错误</span></div>
+                </div>
+                <div class="process-connector"><i class="fas fa-arrow-right"></i></div>
+                <div class="process-node">
+                    <div class="tool-tag">剪映</div>
+                    <div class="node-box"><h4>剪 辑</h4><p>生产</p></div>
+                    <div class="node-details"><span>口型同步</span><span>节奏调整</span><span>标准化字幕</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div class="content-group-item">
+            <h4 class="cg-title">2. 以品质为标准，建立审核机制</h4>
+            <p class="cg-desc">为确保交付的品质和稳定性，在最终审核之外，在低通过率的生图环节增加审核，极大降低后期修改成本</p>
+            <div class="cg-image-wrapper">
+                <img src="AI-Mgmt-Drama-2.png" alt="建立审核机制" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)\'>预留图片位：建立审核机制</div>'">
+            </div>
+        </div>
+
+        <div class="content-group-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+            <h4 class="cg-title">3. 基于目标进行周期性拆解，项目统筹</h4>
+            <p class="cg-desc">基于总制作目标拆解：总目标 》周目标 》日目标，预期管理进度和规避交付风险。</p>
+            <div class="cg-image-wrapper">
+                <img src="AI-Mgmt-Drama-3.png" alt="项目周期拆解" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)\'>预留图片位：项目周期统筹拆解</div>'">
+            </div>
+        </div>
+    </div>
+
+    <div id="aimgmt-words" class="stage-detail-block" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 800;">单词插图批量化生产</h3>
+        <p class="cg-desc">围绕单词配图的高频生产需求，持续优化品质标准、工具链与审核机制，逐步从人工流程推进到数据驱动的批量化生产。</p>
+
+        <div class="words-summary-grid">
+            <div class="words-metric-card is-main">
+                <span>制作量</span>
+                <strong>2050</strong>
+                <p>2025年累计完成单词</p>
+            </div>
+            <div class="words-metric-card">
+                <span>插图产出</span>
+                <strong>5100+</strong>
+                <p>累计交付插图数量</p>
+            </div>
+            <div class="words-efficiency-card">
+                <span>效率变化</span>
+                <div class="efficiency-steps">
+                    <div><b>24年</b><strong>50</strong><em>插图/天</em></div>
+                    <div><b>25年 Q2-Q3</b><strong>200</strong><em>插图/天</em></div>
+                    <div><b>25年 Q4</b><strong>1800</strong><em>插图/天</em></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="words-stage-list">
+            <div class="words-stage-item">
+                <div class="words-stage-copy">
+                    <span>2024</span>
+                    <h4 >确定品质标准，建立AI制作流程机制，标准化AI描述词</h4>
+                    <p>初期AI工具语义能力较弱，需要多次生成和频繁修改</p>
+                    <div class="stage-meta-row">
+                        <div class="stage-efficiency"><strong>50</strong><span>插图/天</span></div>
+                        <div class="stage-tool"><b>AI工具</b><span>Midjourney</span></div>
+                    </div>
+                </div>
+                <div class="words-stage-image">
+                    <img src="AI-Mgmt-Words-1.png" alt="2024单词插图品质标准与审核机制" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)\'>预留图片位：2024单词插图流程</div>'">
+                </div>
+            </div>
+
+            <div class="words-stage-item">
+                <div class="words-stage-copy">
+                    <span>2025 上半年</span>
+                    <h4>更改AI生图工具并优化制作流程</h4>
+                    <p>调整核心生图工具和协作链路，减少重复上传、人工检查和返修成本，效率与品质均显著提升。</p>
+                    <div class="stage-meta-row">
+                        <div class="stage-efficiency"><strong>200</strong><span>插图/天</span></div>
+                        <div class="stage-tool"><b>AI工具</b><span>即梦</span></div>
+                    </div>
+                </div>
+                <div class="words-stage-image">
+                    <img src="AI-Mgmt-Words-2.png" alt="2025上半年单词插图工具链优化" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)\'>预留图片位：2025上半年工具链优化</div>'">
+                </div>
+            </div>
+
+            <div class="words-stage-item">
+                <div class="words-stage-copy">
+                    <span>2025 下半年</span>
+                    <h4>搭建扣子工作流程，调取飞书多维表格数据批量生成</h4>
+                    <p>通过工作流读取飞书多维表格数据，自动完成单词信息读取、提示词生成和插图批量生产，形成高并发生产能力。</p>
+                    <div class="stage-meta-row">
+                        <div class="stage-efficiency"><strong>1800</strong><span>插图/天</span></div>
+                        <div class="stage-tool"><b>AI工具</b><span>扣子</span></div>
+                    </div>
+                </div>
+                <div class="words-stage-image">
+                    <img src="AI-Mgmt-Words-3.png" alt="2025下半年单词插图批量工作流" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)\'>预留图片位：2025下半年批量工作流</div>'">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- 精准品牌营销与跨国视觉业务模块 -->
+        <div id="visual-design-section" class="section-block content-card">
+            <h2 class="section-title">AI 视觉设计</h2>
+
+            <!-- 垂直二级滚动定位高亮菜单 -->
+            <nav class="sub-nav" id="vd-sub-nav">
+                <a href="#vd-haiwai" class="active">海外设计</a>
+                <a href="#vd-huohua">在线教育</a>
+                <a href="#vd-weiqi">围棋｜少年纵横</a>
+                <a href="#vd-xiangqi">国际象棋</a>
+            </nav>
+            
+            <!-- 海外视觉探索 -->
+            <div id="vd-haiwai" class="vd-sub-section content-group-item">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 800;">海外设计</h3>
+                <p class="cg-desc">由于文化背景、历史渊源、自然条件等多方面的影响，不同国家的人会对同一个事物产生不同的感受和反应。面对一个陌生的国家，我们首先要打破固有印象，抛弃对用户的先天认知，尽量用客观的眼光去看待他们。西方人更倾向于直线思考，个人主义鲜明，崇拜英雄主义。而东方人更倾向螺旋形思考，性格内敛，考虑更多，更倾向集体氛围感。</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-1.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-1.png</div>'">
+                </div>
+                <p class="cg-desc" style="margin-top:3rem;">基于数据驱动的设计方向，深度结合 AI 工具进行创意探索，精准把控不同文化背景下的品牌视觉调性与落地品质。</p>
+                
+                <h4 class="cg-title" style="margin-top: 3rem;">海外设计｜官网节日活动</h4>
+                <div class="cg-image-wrapper"style="margin-top:1rem;">
+                    <img src="AI-Visual-2.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-2.png</div>'">
+                </div>
+
+                <h4 class="cg-title" style="margin-top: 3rem;">海外设计｜EDM</h4>
+                <p class="cg-desc">EDM作为被动的接收通知触达用户，需更高效的传递信息，增强传递内容准确度，减少发送频率。</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-3.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.png</div>'">
+                </div>
+                <p class="cg-desc" style="margin-top:2rem;">同一封EDM北美用户和华人用户对同样内容在点击率上有较大的差距（华人用户高于美国用户），针对这两类主要群体做不同的设计分别观测用户喜好。</p>
+                <h4 class="cg-title" style="margin-top: 3rem;">转介绍官网</h4>
+                <p class="cg-desc">面向用户和在职老师奖励制的转介绍入口</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-4.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.png</div>'">
+                </div>
+                <h4 class="cg-title" style="margin-top: 3rem;">转介绍海报</h4>
+                <p class="cg-desc">面向美国人与海外华人</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-5.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.png</div>'">
+                </div>
+            </div>
+
+
+
+
+
+            <!-- 国内大盘视觉 -->
+            <div id="vd-huohua" class="vd-sub-section content-group-item">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 800;">在线教育</h3>
+                <h4 class="cg-title">私域海报</h4>
+                <p class="cg-desc">通过codex直接输出海报，前期撰写该设计规则和风格的skill，通过调用特定词「私域海报」和海报文案即可直接输出</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-2.1.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-1.png</div>'">
+                </div>
+                 <h4 class="cg-title"style="margin-top:3rem;">APP活动开屏</h4>
+                <p class="cg-desc">日常运营活动开屏，用户仅观看1-2秒，通过视觉聚焦核心内容，帮助用户快速获取主要获利信息</p>
+                <div class="cg-image-wrapper" >
+                    <img src="AI-Visual-2.2.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-1.png</div>'">
+                </div>
+                
+                  <h4 class="cg-title"style="margin-top:3rem;">转介绍海报 </h4>
+                <p class="cg-desc">转介绍拉新活动，用户上传照片+海报模版上传朋友圈</p>
+                <div class="cg-image-wrapper" >
+                    <img src="AI-Visual-2.3.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-1.png</div>'">
+                </div>
+                   <h4 class="cg-title"style="margin-top:3rem;">潮玩衍生品落地页设计 </h4>
+                <p class="cg-desc">公司IP衍生的毛绒玩具，在内部商城售卖</p>
+                <div class="cg-image-wrapper" >
+                    <img src="AI-Visual-2.4.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-1.png</div>'">
+                </div>
+                
+                <h4 class="cg-title" style="margin-top: 3rem;">学达优｜视觉设计</h4>
+                <p class="cg-desc" >附属业务，针对小初高中生的1对1在线教育服务，主要负责C端投放的设计，结合ChatGPT落地应用</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-2.5.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-2.png</div>'">
+                </div>
+                
+                <h4 class="cg-title" style="margin-top: 3rem;">学达优｜倒计时海报</h4>
+                <p class="cg-desc" >基于Qwen模型输出场景和数字</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-2.6.png" alt="高品质营销物料展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.png</div>'">
+                </div>
+            </div>
+            
+            <!-- 专项围棋类目 -->
+            <div id="vd-weiqi" class="vd-sub-section content-group-item">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 800;">围棋｜少年纵横</h3>
+                <p class="cg-desc">24年中旬，少年纵横上线，为了加强用户认知与，基于AIGC建立视觉语言，提升新项目品牌认知度<br>
+                易读性：板式间距统一，结构清晰，提升易读性 <br>
+                品牌记忆：配色、图形、字体统一<br>
+                强化视觉基因：突出围棋识别度，图形基因以国风为主</p>
+                <h4 class="cg-title">官网banner设计</h4>
+                <div class="cg-image-wrapper" style="margin-top:1rem;">
+                    <img src="AI-Visual-3.1.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+                <h4 class="cg-title" style="margin-top:3rem;">九品闯关分享海报</h4>
+                <p class="cg-desc">一品最高，九品最低，结合人物的服饰和装扮区分一品至九品</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-3.2.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+                
+                <h4 class="cg-title"style="margin-top:3rem;">徽章设计</h4>
+                <p class="cg-desc">背景：少年纵横上线徽章系统，需要16个排行榜徽章（8个榜首徽章、8个百强徽章）<br>
+                    目标：强化用户获得感<br>
+                    策略：根据勋章类型，在外形、色彩、元素图形几个维度进行差异化设计，给用户真实感与获得感，确保整个勋章体系的延续性<br>
+                </p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-3.3.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+                <p class="cg-desc" style="margin-top:2rem;">根据勋章类型，在外形、色彩、元素图形、材质几个维度进行差异化设计, 给用户真实感与获得感, 确保整个勋章体系的延续性</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-3.4.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+                <div class="cg-image-wrapper"style="margin-top:2rem;">
+                    <img src="AI-Visual-3.5.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+                <p class="cg-desc" style="margin-top:2rem;">排行榜含金量与围棋九品高低一一对应，根据不同九品属性从中提取图形元素</p>
+                <div class="cg-image-wrapper"style="margin-top:2rem;">
+                    <img src="AI-Visual-3.6.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+                <h4 class="cg-title" style="margin-top:3rem;">围棋学具盒</h4>
+                <p class="cg-desc">为确保ip一致性，早期使用comfyui扁平转3d+训练模型方式输出ip。</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-3.7.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+            </div>
+
+
+            <div id="vd-xiangqi" class="vd-sub-section content-group-item">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 800;">国际象棋</h3>
+                <p class="cg-desc">火花推出的国际象棋业务，基于国际象棋的特质，关键词提取：冒险，竞技，趣味，国际<br>
+                在火花品牌的基础加入了哥特风格元素的内容</p>
+                <h4 class="cg-title">落地页&海报</h4>
+                
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-4.1.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+                <h4 class="cg-title" style="margin-top:2rem;">高价课</h4>
+                <p class="cg-desc">同年推出高价课，更具专业性和定制化教学。提取关键词：品质、留白、国际、安静、细致</p>
+                <div class="cg-image-wrapper">
+                    <img src="AI-Visual-4.2.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+                
+                <h4 class="cg-title"style="margin-top:2rem;">国际象棋学具盒</h4>
+                </p>
+                <div class="cg-image-wrapper" style="margin-top:1rem;">
+                    <img src="AI-Visual-4.3.png" alt="品牌核心视觉展示" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style='padding:4rem;text-align:center;color:var(--text-gray);background:var(--bg-light)'>预留图片位：AI-Visual-3.1.png</div>'">
+                </div>
+            
+            <!-- 其他分支留空备用区 -->
+            <div id="vd-qita" class="vd-sub-section content-group-item" style="display:none;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 800;">其他设计</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 外部功能插件与交互逻辑载入 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
